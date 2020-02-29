@@ -1,3 +1,20 @@
+<!-- nav bar -->
+<mat-toolbar color="primary" class ="navbar">
+  <div> Angular Material</div>
+  <div>
+    <span>Home</span>
+    <span>About</span>
+    <span>Services</span>
+  </div>
+</mat-toolbar>
+
+<!-- side nav -->
+<mat-sidenav-container>
+  <mat-sidenav>Sidenav</mat-sidenav>
+</mat-sidenav-content>Main</mat-sidenav-content>
+</mat-sidenav-container>
+
+
 <!-- trypography -->
 
 <div class= 'mat-display-4'>hello</div>
@@ -44,5 +61,53 @@
 
  <!-- button toggle -->
 <div>
-  <mat-button-toggle>toggle</mat-button-toggle>
+  <mat-button-toggle #toggleBtn checked disableRipple disabled>toggle</mat-button-toggle>
+  {{toggleBtn.checked}}
 </div>
+<!-- group elements used instead of check boxes -->
+
+<div>
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
+  <mat-button-toggle value='angular'>Angular</mat-button-toggle>
+  <mat-button-toggle value='react'>React</mat-button-toggle>
+  <mat-button-toggle value='vue'>Vue</mat-button-toggle>
+  </mat-button-toggle-group>
+  {{toggleGroup.value}}
+  
+</div>
+<!-- Icons -->
+<div>
+<mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+<mat-icon color ="primary">face</mat-icon>
+</div>
+<!-- badges -->
+<div>
+  <span [matBadge]="notifications" [matBadgeHidden]="notifications==0" >Notifications</span>
+</div>
+<!-- badges positioning -->
+<div>
+  <span matBadge="4" matBadgePosition="below before">Notifications</span>
+</div>
+<div>
+  <span matBadge="4" matBadgePosition="below after">Notifications</span>
+</div>
+<div>
+  <span matBadge="4" matBadgePosition="above before">Notifications</span>
+</div>
+<!-- badge sizing -->
+<span matBadge="4" matBadgeSize="small">Notifications</span>
+<span matBadge="4" matBadgeSize="medium">Notifications</span>
+<span matBadge="4" matBadgeSize="large" matBadgeOverlap="false">Notifications</span>
+
+<!-- Progress Spinner -->
+<div>
+<mat-progress-spinner value="60"></mat-progress-spinner>
+</div>
+
+<div>
+<mat-spinner *ngIf= "showSpinner"></mat-spinner>
+<button (click)="loadData()">Load Data</button>
+</div>
+
+
+
